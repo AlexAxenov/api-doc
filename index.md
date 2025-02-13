@@ -22,8 +22,8 @@ includes:
   - v1_jobs
   - v2
   - v2_authentication
-  - v2_conversations
   - v2_messages
+  - v2_pagination
   - errors
   - terms
   - legal
