@@ -24,6 +24,7 @@ includes:
   - v2_authentication
   - v2_messages
   - v2_pagination
+  - v2_request_limits
   - errors
   - terms
   - legal
