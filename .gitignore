@@ -24,3 +24,8 @@ doc/
 .idea/
 .vscode/
 _site/
+
+# Nix
+/.direnv
+result
+result-*
