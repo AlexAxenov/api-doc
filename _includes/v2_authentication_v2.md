@@ -1,4 +1,13 @@
-## Authentication
+## Authentication V2
+
+<aside class="warning">
+  <b>This version of authentication is not released for now. Please use authentication V1</b>
+</aside>
+
+```shell
+curl -X GET "API_ENDPOINT_HERE" \
+--header "X-Api-Token: YOUR_AUTHENTICATION_TOKEN"
+```
 
 All requests to Pact API must be authenticated.
 
@@ -24,11 +33,3 @@ To receive new pair of tokens send with a header that looks like this
 `X-Api-Refresh-Token: Refresh Token`
 
 `POST https://api.pact.im/api/refresh_token`
-
-### Examples
-
-```shell
-# Header
-curl -X GET "API_ENDPOINT_HERE"
-  -H "X-Api-Token: YOUR_AUTHENTICATION_TOKEN"
-```

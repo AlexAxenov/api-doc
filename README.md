@@ -12,6 +12,9 @@ cd slate-for-jekyll
 # Install dependencies
 bundle install
 
+# Complie assets
+bundle exec jekyll build
+
 # Run locally
 bundle exec jekyll serve
 ```
