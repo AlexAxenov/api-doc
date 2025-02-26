@@ -11,15 +11,5 @@ lib.makeScope newScope (
 
     ruby = callPackage ./ruby.nix { };
     inherit (self.ruby) devEnv;
-
-    gemset = callPackage ./gemset.nix { };
-    inherit (self.gemset) wrappedRuby;
-
-    gemset-small = self.gemset.override {
-      without = [
-        "development"
-        "test"
-      ];
-    };
   }
 )
