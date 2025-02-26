@@ -47,7 +47,6 @@
             projectRootFile = "flake.nix";
             programs.deadnix.enable = true;
             programs.nixfmt.enable = true;
-            settings.global.excludes = [ "gemset.nix" ];
           };
 
           packages.devshell = pkgs.buildEnv {
