@@ -40,9 +40,9 @@ This multi-limit approach balances responsiveness and fairness, allowing high-fr
 - Maximum 20 requests per minute
 
 [Send message to existing conversation](#v2-send-conversation-message):
-- Maximum 10 requests per second
-- Maximum 60 requests per minute
+- Maximum 5 requests per second
+- Maximum 30 requests per minute
 
 [Write first message](#v2-write-first-message):
-- Maximum 10 requests per second
-- Maximum 60 requests per minute
+- Maximum 5 requests per second
+- Maximum 30 requests per minute
