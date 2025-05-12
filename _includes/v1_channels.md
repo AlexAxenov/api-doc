@@ -233,17 +233,28 @@ COMPANY_ID | ID of the company
 
 #### Query Parameters
 
-##### Create whatsapp channel
+##### Create whatsapp channel  (by qr code)
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
 provider | true | Must be `whatsapp`
-sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month.
-phone | true | string 
+sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month. If the parameter is not specified, no messages will be synchronized.
 
 <aside class="notice">
 You will get QR-code webhook after this action. This QR-code must be scanned on mobile device to authorize Pact.im.
 If you can't do this - try to connect Whatsapp via our web interface.
+</aside>
+
+##### Create whatsapp channel (by digital code)
+
+Parameter | Required | Validations | Description
+--------- | -------- | ----------- | -----------
+provider | true | Must be `whatsapp`
+sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month. If the parameter is not specified, no messages will be synchronized.
+phone | true | string | Phone number. Example: ‘7999999999’
+
+<aside class="notice">
+After you have created a WhatsApp channel, we will send a confirmation code ("Request code" endpoint). You must enter this code in the WhatsApp application to complete the connection.
 </aside>
 
 ##### Create whatsapp business channel (dialog360 by token)
@@ -320,7 +331,7 @@ Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
 provider | true | Must be `telegram_personal`
 via_qr_code | true | boolean | Must be a 'true'
-sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month.
+sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month. If the parameter is not specified, no messages will be synchronized.
 
 <aside class="notice">
 You will get QR-code webhook after this action. This QR-code must be scanned on mobile device to authorize Pact.im.
@@ -334,7 +345,7 @@ Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
 provider | true | Must be `telegram_personal` |
 phone | true | Must be a String | Phone number. Example: '7999999999'
-sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month.
+sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month. If the parameter is not specified, no messages will be synchronized.
 
 <aside class="notice">
 After you have created a telegram channel. You must request a confirmation code ("Request Code" endpoint). The code will be sent to your device's Telegram App. You must send the received code to the endpoint "Confirm code"
