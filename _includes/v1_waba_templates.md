@@ -1,4 +1,4 @@
-## Waba templates
+## Waba Templates
 
 A company with a whatsapp_business channel can have waba templates
 
