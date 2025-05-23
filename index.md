@@ -27,6 +27,7 @@ includes:
   - v2_pagination
   - v2_request_rate_limits
   - v2_webhooks
+  - v2_waba_templates
   - errors
   - terms
   - legal
