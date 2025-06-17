@@ -1,7 +1,7 @@
 ## Messages
 
 <aside class="notice">
-  Currently we are migrating to API V2. Use <a href="https://pact-im.github.io/api-doc/#messages15">this</a> message methods instead.
+  Currently we are migrating to API V2. Use <a href="#messages15">this</a> message methods instead.
 </aside>
 
 ### Upload attachments
