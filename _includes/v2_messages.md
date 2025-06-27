@@ -322,7 +322,7 @@ waba_id | false | Must be a string | WhatsappBusiness template ID
 substitutions | false | Must be an array of strings | WhatsappBusiness template substitutions (if template has them)
 
 You should use waba_id if you want to write first with <b>whatsapp_business</b> provider.
-More about [waba templates](#waba-templates)
+More about [waba templates](#v2-waba_templates)
 
 #### Response Parameters
 

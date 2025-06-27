@@ -29,6 +29,7 @@ includes:
   - v2_request_rate_limits
   - v2_webhooks
   - v2_waba_templates
+  - v2_auths
   - errors
   - terms
   - legal
