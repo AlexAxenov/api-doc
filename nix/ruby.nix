@@ -4,8 +4,8 @@
   bundler,
 }:
 (mkRuby {
-  version = mkRubyVersion "3" "3" "4" "";
-  hash = "sha256-/mow+X1U4Cl2jy3fSSNpnEFs28Om6W2z4tVxbH25ajQ=";
-  cargoHash = "sha256-GeelTMRFIyvz1QS2L+Q3KAnyQy7jc0ejhx3TdEFVEbk=";
+  version = mkRubyVersion "3" "4" "4" "";
+  hash = "sha256-oFl7/fMS4BDv0e/6qNfx14MxRv3BeVDKqBWP+j3L+oU=";
+  cargoHash = "sha256-kdfNY8wVmSRR+cwEDYge/HDPRvdTNKLk/BhgqQeelOg=";
 }).override
   { inherit bundler; }

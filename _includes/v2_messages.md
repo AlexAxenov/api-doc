@@ -92,14 +92,14 @@ per_page | false | Must be an integer | Amount of entries per page will be retur
 
 <p id="v2-message-object">Message object</p>
 
-* <b>id</b> (Integer) - ID
+* <b id="v2-message-id">id</b> (Integer) - ID
 * <b id="v2-message-external-id">external_id</b> (String) - External message ID from provider (it uses for message replies)
 * <b>company_id</b> (Integer) - ID of the company
-* <b>conversation_id</b> (Integer) - ID of the conversation
+* <b>conversation_id</b> (Integer) - [ID](#v2-conversation-id) of the conversation
 * <b>contact_id</b> (Integer) - ID of the message contact
 * <b>replied_to_id</b> (String) - External ID of the message to which this message is a reply
 * <b>created_at</b> (Time) - Time we created this message in our db
-* <b>external_created_at</b> (Time) - Time from provider (as a rule, the time of direct sending of the message)
+* <b id="v2-message-external-created-at">external_created_at</b> (Time) - Time from provider (as a rule, the time of direct sending of the message)
 * <b>income</b> (Boolean) – Whether message is income or outgoing
 * <b>status</b> (String) - Status of the message (can be `created`, `sent`, `delivered`, `read`, `error`)
 * <b>message</b> (String) – Message body

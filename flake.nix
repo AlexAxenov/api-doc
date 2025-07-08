@@ -55,6 +55,11 @@
               inherit (pactPackages)
                 devEnv
                 ;
+              inherit (pkgs)
+                gnumake
+                pkg-config
+                gcc
+                ;
             };
           };
 
