@@ -16,7 +16,6 @@ includes:
   - v1_companies
   - v1_channels
   - v1_conversations
-  - v1_messages
   - v1_waba_templates
   - v1_webhooks
   - v1_jobs
@@ -24,6 +23,7 @@ includes:
   - v2_authentication_v1
   - v2_authentication_v2
   - v2_messages
+  - v2_attachments
   - v2_conversations
   - v2_pagination
   - v2_request_rate_limits

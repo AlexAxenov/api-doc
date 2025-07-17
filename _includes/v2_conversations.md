@@ -139,7 +139,7 @@ curl -X GET 'https://api.pact.im/api/p2/conversations/CONVERSATION_ID' \
 ```
 
 <p id="v2-get-conversation"></p>
-### Get Conversation
+### Get Conversation Details
 
 Returns conversation of the company by id
 
