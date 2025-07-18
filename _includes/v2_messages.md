@@ -282,7 +282,7 @@ curl -X POST 'https://api.pact.im/api/p2/messages' \
 <p id="v2-write-first-message"></p>
 ### Write First Message
 
-{% assign WRITE_FIRST_PROVIDERS = "whatsapp,telegram_personal,whatsapp_business" | split: "," %}
+{% assign WRITE_FIRST_PROVIDERS = "whatsapp,telegram_personal,whatsapp_business,vkontakte_direct" | split: "," %}
 
 Allows to send message when no conversation with this recipient exists
 
@@ -302,6 +302,8 @@ company_id | true | Must be an integer | ID of the company
 provider | true | Must be a string and one of: {{ WRITE_FIRST_PROVIDERS | join: ", " }} | Provider
 phone | false | Must be a string | Recipient phone
 nickname | false | Must be a string | Recipient nickname (for telegram_personal)
+vkontakte_id  | false | Must be a string | Recipient id vkontakte (Mutually exclusive with `vkontakte_domain`)
+vkontakte_domain  | false | Must be a string | Recipient domain vkontakte (for Mutually exclusive with `vkontakte_id`)
 text | false | Must be a string | Text of the message
 attachment_ids | false | Must be an array of integers | IDs of the [attachments](#attachments)
 waba_id | false | Must be a string | WhatsappBusiness template ID
