@@ -1,30 +1,5 @@
 ## Webhooks
 
-> Webhook when message was sent:
-
-```json
-{
-  "event": "create",
-  "type": "message",
-  "object": {
-    "id": 22891,
-    "external_id": null,
-    "company_id": 52249,
-    "conversation_id": 18643195,
-    "contact_id": 549645443,
-    "replied_to_id": null,
-    "created_at": "2025-02-17T14:46:29.074Z",
-    "external_created_at": "2025-02-17T14:46:29.000Z",
-    "income": false,
-    "status": "sent",
-    "message": "Текст в заголовке\nШаблон с кнопками и текстом в заголовке",
-    "reactions": [],
-    "details": null,
-    "attachments": []
-  }
-}
-```
-
 > Webhook when message was delivered:
 
 ```json
@@ -49,46 +24,6 @@
   }
 }
 ```
-
-> Webhook when message was failed:
-
-```json
-{
-  "event": "update",
-  "type": "message",
-  "object": {
-    "id": 22892,
-    "external_id": "wamid.HBgLNzk2MDk4MjMwODkVAgARGBJCMjM1NEU1Q0UwMzcyNEI2NEUA",
-    "company_id": 52249,
-    "conversation_id": 18643298,
-    "contact_id": 549645443,
-    "replied_to_id": null,
-    "created_at": "2025-02-17T15:07:24.968Z",
-    "external_created_at": "2025-02-17T15:07:24.000Z",
-    "income": false,
-    "status": "error",
-    "message": "Текст в заголовке\nШаблон с кнопками и текстом в заголовке",
-    "reactions": [],
-    "details": {
-      "result": "NOT DELIVERED",
-      "internal_reason": {
-        "errors": [
-          {
-            "code": 131026,
-            "error_data": {
-              "details": "Message Undeliverable."
-            },
-            "message": "Message undeliverable",
-            "title": "Message undeliverable"
-          }
-        ]
-      }
-    },
-    "attachments": []
-  }
-}
-```
-
 With Api V2 release we are starting to send new type of webhooks. More standardized, opimized and informative
 
 #### Webhook Parameters
@@ -114,3 +49,39 @@ For incoming messages you will receive only one webhook with event `create` and 
 #### Webhook Message Object Parameters
 
 [Message object](#v2-message-object)
+
+> Webhook when connecting a messenger (without pages):
+
+```json
+{
+  "event": "update",
+  "type": "auth",
+  "object": {
+    "id": 1,
+    "company_id": 1,
+    "provider": "whatsapp",
+    "state": "enabled",
+    "phone_number": "79000000000",
+    "created_at": "2025-06-25T08:02:01.578Z",
+    "updated_at": "2025-06-25T08:02:30.904Z",
+    "sync_messages_at": "2025-06-24T08:02:01.570Z"
+  }
+}
+```
+
+### Auth Webhooks:
+
+This webhook is triggered whenever an auth object undergoes a significant change. The following events are supported:
+
+* <b>Created</b> ("event": "create") -  Triggered when a new auth is created.
+
+* <b>Connected</b> ("event": "update", "state": "enabled") -  Triggered when the auth is successfully connected(for example, when WhatsApp is successfully connected)
+
+* <b>Disconnected</b> ( "event": "update", "state": "disabled") - Triggered when the auth is disconnected from the external service.
+
+* <b>Deleted</b> ("event": "delete") - Triggered when the auth is permanently deleted.
+
+
+#### Webhook Auth Object Parameters
+
+[Auth object](#v2-auth-object)

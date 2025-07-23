@@ -39,6 +39,12 @@ This multi-limit approach balances responsiveness and fairness, allowing high-fr
 [Get concrete message of the conversation](#v2-get-conversation-message):
 - Maximum 20 requests per minute
 
+[Get conversations of the company](#v2-get-conversations):
+- Maximum 10 requests per minute
+
+[Get concrete conversation of the company](#v2-get-conversation):
+- Maximum 10 requests per minute
+
 [Send message to existing conversation](#v2-send-conversation-message):
 - Maximum 5 requests per second
 - Maximum 30 requests per minute
@@ -46,3 +52,6 @@ This multi-limit approach balances responsiveness and fairness, allowing high-fr
 [Write first message](#v2-write-first-message):
 - Maximum 5 requests per second
 - Maximum 30 requests per minute
+
+[Get waba templates](#v2-get-waba_templates):
+- Maximum 20 requests per minute

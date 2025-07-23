@@ -92,14 +92,14 @@ per_page | false | Must be an integer | Amount of entries per page will be retur
 
 <p id="v2-message-object">Message object</p>
 
-* <b>id</b> (Integer) - ID
+* <b id="v2-message-id">id</b> (Integer) - ID
 * <b id="v2-message-external-id">external_id</b> (String) - External message ID from provider (it uses for message replies)
 * <b>company_id</b> (Integer) - ID of the company
-* <b>conversation_id</b> (Integer) - ID of the conversation
+* <b>conversation_id</b> (Integer) - [ID](#v2-conversation-id) of the conversation
 * <b>contact_id</b> (Integer) - ID of the message contact
 * <b>replied_to_id</b> (String) - External ID of the message to which this message is a reply
 * <b>created_at</b> (Time) - Time we created this message in our db
-* <b>external_created_at</b> (Time) - Time from provider (as a rule, the time of direct sending of the message)
+* <b id="v2-message-external-created-at">external_created_at</b> (Time) - Time from provider (as a rule, the time of direct sending of the message)
 * <b>income</b> (Boolean) – Whether message is income or outgoing
 * <b>status</b> (String) - Status of the message (can be `created`, `sent`, `delivered`, `read`, `error`)
 * <b>message</b> (String) – Message body
@@ -107,20 +107,6 @@ per_page | false | Must be an integer | Amount of entries per page will be retur
 * <b>details</b> (Object) - Data containing reason why message was not delivered (if it is)  
 * <b>attachments</b> (Array) – Array of message [attachment objects](#v2-attachment-object) (if it has)
 
-<p id="v2-attachment-object">Attachment object</p>
-
-* <b>id</b> (Integer) - ID
-* <b>message_id</b> (Integer) - ID of the message
-* <b>file_name</b> (String) - Original file name
-* <b>mime_type</b> (String) - Mime type (`audio/ogg` for ex.)
-* <b>size</b> (Integer) - File size in bytes
-* <b>attachment_url</b> (String) - Url of the file
-* <b>preview_url</b> (String) - Url of the image preview (if it is image)
-* <b>aspect_ratio</b> (Float) - Aspect ratio (if it is image)
-* <b>data</b> (Object) - width and height (if it is image)
-* <b>push_to_talk</b> (Boolean) - Voice or just audio file (if it is audio)
-
-[Meta object](#v2-meta-object). More info in the paragraph about pagination
 
 
 ```shell
@@ -237,7 +223,7 @@ Parameter | Required | Validations | Description
 private_api_token | true | Must be a string | YOUR_API_TOKEN
 company_id | true | Must be an integer | ID of the company
 text | false | Must be a string | Text of the message
-attachment_ids | false | Must be an array of integers | IDs of the attachments
+attachment_ids | false | Must be an array of integers | IDs of the [attachments](#attachments)
 replied_to_id | false | Must be a string | [External ID](#v2-message-external-id) of the message to which this message is a reply
 
 #### Response Parameters
@@ -296,7 +282,7 @@ curl -X POST 'https://api.pact.im/api/p2/messages' \
 <p id="v2-write-first-message"></p>
 ### Write First Message
 
-{% assign WRITE_FIRST_PROVIDERS = "whatsapp,telegram_personal,whatsapp_business" | split: "," %}
+{% assign WRITE_FIRST_PROVIDERS = "whatsapp,telegram_personal,whatsapp_business,vkontakte_direct" | split: "," %}
 
 Allows to send message when no conversation with this recipient exists
 
@@ -316,13 +302,15 @@ company_id | true | Must be an integer | ID of the company
 provider | true | Must be a string and one of: {{ WRITE_FIRST_PROVIDERS | join: ", " }} | Provider
 phone | false | Must be a string | Recipient phone
 nickname | false | Must be a string | Recipient nickname (for telegram_personal)
+vkontakte_id  | false | Must be a string | Recipient id vkontakte (Mutually exclusive with `vkontakte_domain`)
+vkontakte_domain  | false | Must be a string | Recipient domain vkontakte (for Mutually exclusive with `vkontakte_id`)
 text | false | Must be a string | Text of the message
-attachment_ids | false | Must be an array of integers | IDs of the attachments
+attachment_ids | false | Must be an array of integers | IDs of the [attachments](#attachments)
 waba_id | false | Must be a string | WhatsappBusiness template ID
 substitutions | false | Must be an array of strings | WhatsappBusiness template substitutions (if template has them)
 
 You should use waba_id if you want to write first with <b>whatsapp_business</b> provider.
-More about [waba templates](#waba-templates)
+More about [waba templates](#v2-waba_templates)
 
 #### Response Parameters
 

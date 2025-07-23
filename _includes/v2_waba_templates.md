@@ -1,5 +1,5 @@
 ## Waba Templates
-
+<p id="v2-waba_templates"></p>
 With the help of what is described in this section you can:
 - [Get waba templates of user's companies](#v2-get-waba_templates)
 
