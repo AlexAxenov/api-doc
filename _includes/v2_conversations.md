@@ -75,7 +75,7 @@ Read more about [pagination](#pagination)
 
 `GET https://api.pact.im/api/p2/conversations`
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
@@ -153,7 +153,7 @@ Parameter | Description
 --------- | -----------
 CONVERSATION_ID | ID of the conversation
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------

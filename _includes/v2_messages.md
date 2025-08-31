@@ -79,7 +79,7 @@ Parameter | Description
 --------- | -----------
 CONVERSATION_ID | ID of the conversation
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
@@ -157,7 +157,7 @@ Parameter | Description
 --------- | -----------
 CONVERSATION_ID | ID of the conversation
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------

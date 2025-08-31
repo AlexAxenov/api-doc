@@ -85,3 +85,39 @@ This webhook is triggered whenever an auth object undergoes a significant change
 #### Webhook Auth Object Parameters
 
 [Auth object](#v2-auth-object)
+
+> Webhook when creating a conversion:
+
+```json
+{
+  "event": "create",
+  "type": "conversation",
+  "object": {
+    "id": 216291470,
+    "company_id": 96467,
+    "sender_name": "70000000000",
+    "sender_phone": "70000000000",
+    "sender_external_id": "70000000000",
+    "sender_external_public_id": "70000000000",
+    "provider": "whatsapp",
+    "avatar_url": "path to file",
+    "created_at": "2025-08-31T13:28:00.562Z",
+    "last_updated_at": "2025-08-31T13:28:00.000Z",
+    "last_message_id": 1315284110,
+    "operational_state": "open",
+    "replied_state": "unreplied",
+    "group": false
+  }
+}
+```
+
+### Conversion Webhooks:
+
+These webhooks are sent when a conversion is created or updated. Accordingly, two types of events are available:
+
+* <b>Created</b> ("event": "create") -  Triggered when a new auth is created.
+* <b>Update</b> ("event": "create") -  Triggered when information inside a conversion is updated, for example when a new message arrives and the `"last_message_id"` field is updated.
+* <b>Delete</b> ("event": "create") -  Triggered when a conversion is deleted.
+
+#### Webhook Conversion  Object Parameters
+[Conversion  object](#v2-conversation-object)

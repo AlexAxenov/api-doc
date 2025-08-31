@@ -73,7 +73,7 @@ Read more about [pagination](#pagination)
 
 `GET https://api.pact.im/api/p2/waba_templates`
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
