@@ -79,7 +79,7 @@ Parameter | Description
 --------- | -----------
 CONVERSATION_ID | ID of the conversation
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
@@ -106,6 +106,7 @@ per_page | false | Must be an integer | Amount of entries per page will be retur
 * <b>reactions</b> (Array) – Message reactions
 * <b>details</b> (Object) - Data containing reason why message was not delivered (if it is)  
 * <b>attachments</b> (Array) – Array of message [attachment objects](#v2-attachment-object) (if it has)
+* <b>delivery</b> (Boolean) - Indicates whether this message was sent using the bulk mail feature or not.
 
 
 
@@ -156,7 +157,7 @@ Parameter | Description
 --------- | -----------
 CONVERSATION_ID | ID of the conversation
 
-#### Body Parameters (Json)
+#### Query Parameters
 
 Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
