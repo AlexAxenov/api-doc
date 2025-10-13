@@ -224,7 +224,7 @@ Parameter | Required | Validations | Description
 private_api_token | true | Must be a string | YOUR_API_TOKEN
 company_id | true | Must be an integer | ID of the company
 text | false | Must be a string | Text of the message
-attachment_ids | false | Must be an array of integers | IDs of the [attachments](#attachments)
+attachment_ids | false | Must be an array of integers | ID of the [attachments](#attachments). One message can contain only one array with one ID. To send multiple attachments, you must send multiple requests with different IDs.
 replied_to_id | false | Must be a string | [External ID](#v2-message-external-id) of the message to which this message is a reply
 
 #### Response Parameters
@@ -306,7 +306,7 @@ nickname | false | Must be a string | Recipient nickname (for telegram_personal)
 vkontakte_id  | false | Must be a string | Recipient id vkontakte (Mutually exclusive with `vkontakte_domain`)
 vkontakte_domain  | false | Must be a string | Recipient domain vkontakte (for Mutually exclusive with `vkontakte_id`)
 text | false | Must be a string | Text of the message
-attachment_ids | false | Must be an array of integers | IDs of the [attachments](#attachments)
+attachment_ids | false | Must be an array of integers | ID of the [attachments](#attachments). One message can contain only one array with one ID. To send multiple attachments, you must send multiple requests with different IDs.
 waba_id | false | Must be a string | WhatsappBusiness template ID
 substitutions | false | Must be an array of strings | WhatsappBusiness template substitutions (if template has them)
 
