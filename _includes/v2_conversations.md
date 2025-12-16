@@ -34,22 +34,6 @@ curl -X GET 'https://api.pact.im/api/p2/conversations' \
       "operational_state": "open",
       "replied_state": "replied",
       "group": false
-    },
-    {
-      "id": 18642824,
-      "company_id": 52204,
-      "sender_name": "89045713184 Pact.im",
-      "sender_phone": "79045713184",
-      "sender_external_id": "355620062",
-      "sender_external_public_id": "test_123",
-      "provider": "telegram_personal",
-      "avatar_url": "http://localhost:3000/avatars/original/missing.png",
-      "created_at": "2024-11-07T14:52:55.881Z",
-      "last_updated_at": "2024-11-18T09:01:11.000Z",
-      "last_message_id": 13828,
-      "operational_state": "open",
-      "replied_state": "replied",
-      "group": false
     }
   ],
   "meta": {
@@ -160,6 +144,68 @@ Parameter | Required | Validations | Description
 private_api_token | true | Must be a string | YOUR_API_TOKEN
 company_id | true | Must be an integer | ID of the company
 
+<!--
+<p id="v2-update-conversation"></p>
+### Update Conversation
+```shell
+curl -X PUT 'https://api.pact.im/api/p2/conversations/3' \
+--header 'Content-Type: application/json' \
+--data '{
+  "private_api_token":   "43384f0bc343f295f3172ab1b312fc9a09b212f14778cfaf5e22",
+  "company_id": 1,
+  "operational_state": "archived", 
+  "replied_state": "unreplied"
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "conversation": {
+        "id": 3,
+        "company_id": 1,
+        "sender_name": "Иван",
+        "sender_phone": null,
+        "sender_external_id": "110218431333189",
+        "sender_external_public_id": "test",
+        "provider": "telegram_personal",
+        "avatar_url": "http://localhost:3000/avatars/original/missing.png",
+        "created_at": "2025-12-11T15:14:17.879Z",
+        "last_updated_at": "2025-12-15T10:52:40.000Z",
+        "last_message_id": 1123356,
+        "operational_state": "archived",
+        "replied_state": "unreplied",
+        "group": false
+    }
+}
+```
+
+This request allows you to update the conversation status - answered/unanswered and/or send the conversation to the archive or retrieve it.
+
+#### HTTP Request
+
+`PUT https://api.pact.im/api/p2/conversations/<CONVERSATION_ID>`
+
+#### URL Parameters
+
+Parameter | Description
+--------- | -----------
+CONVERSATION_ID | ID of the conversation
+
+#### Query Parameters
+
+Parameter | Required | Validations | Description
+--------- | -------- | ----------- | -----------
+private_api_token | true | Must be a string | YOUR_API_TOKEN
+company_id | true | Must be an integer | ID of the company
+operational_state | false | Must be a string | Can be `open` or `archived`. 
+replied_state | false | Must be a string| Can be `replied` or `unreplied`. 
+-->
+
 #### Response Parameters
 
 [Conversation object](#v2-conversation-object)
+
+
+
