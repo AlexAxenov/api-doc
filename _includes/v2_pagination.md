@@ -52,5 +52,5 @@ per_page | false | Must be an integer | Amount of entries per page will be retur
 * <b>per_page</b> (Integer) - Entries per page
 
 <aside class="notice">
-  If the value of per_page less than entries_count value, then the page is the last one and there are no more entries
+  If the value of entries_count less than per_page, then the page is last one and there are no more entries
 </aside>
