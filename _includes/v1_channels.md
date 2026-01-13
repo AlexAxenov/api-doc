@@ -3,6 +3,7 @@
 In order to receive and send messages, you need to connect channels.
 Channels is a source of incoming messages in the system. Channel providers:
 
+* MAX
 * WhatsApp
 * Instagram_business
 * Telegram
@@ -232,6 +233,18 @@ Parameter | Description
 COMPANY_ID | ID of the company
 
 #### Query Parameters
+
+##### Create max channel  (by qr code)
+
+Parameter | Required | Validations | Description
+--------- | -------- | ----------- | -----------
+provider | true | Must be `max`
+sync_messages_from | false | timestamp | Only messages created after `sync_messages_from` will be synchronized. Not older than one month. If the parameter is not specified, no messages will be synchronized.
+
+<aside class="notice">
+You will get QR-code webhook after this action. This QR-code must be scanned on mobile device to authorize Pact.im.
+If you can't do this - try to connect max via our web interface.
+</aside>
 
 ##### Create whatsapp channel  (by qr code)
 

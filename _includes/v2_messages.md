@@ -310,7 +310,7 @@ curl -X POST 'https://api.pact.im/api/p2/messages' \
 <p id="v2-write-first-message"></p>
 ### Write First Message
 
-{% assign WRITE_FIRST_PROVIDERS = "whatsapp,telegram_personal,whatsapp_business,vkontakte_direct" | split: "," %}
+{% assign WRITE_FIRST_PROVIDERS = "max,whatsapp,telegram_personal,whatsapp_business,vkontakte_direct" | split: "," %}
 
 Allows to send message when no conversation with this recipient exists
 
