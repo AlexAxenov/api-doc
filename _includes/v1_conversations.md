@@ -12,7 +12,7 @@ curl -X PUT "https://api.pact.im/p1/companies/COMPANY_ID/conversations/<ID>/note
 ```
 
 > The above command returns JSON structured like this:
-z
+
 ```json
 {
    "status":"updated"
