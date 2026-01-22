@@ -310,7 +310,11 @@ curl -X POST 'https://api.pact.im/api/p2/messages' \
 <p id="v2-write-first-message"></p>
 ### Write First Message
 
+<<<<<<< HEAD
 {% assign WRITE_FIRST_PROVIDERS = "max,whatsapp,telegram_personal,whatsapp_business,vkontakte_direct" | split: "," %}
+=======
+{% assign WRITE_FIRST_PROVIDERS = "whatsapp,telegram_personal,whatsapp_business,vkontakte_direct,max" | split: "," %}
+>>>>>>> 19824d3 ([pact-4020]Removed inactive requests from documentation)
 
 Allows to send message when no conversation with this recipient exists
 
@@ -342,7 +346,6 @@ substitutions | false | Must be an array of strings | WhatsappBusiness template 
 You should use waba_id if you want to write first with <b>whatsapp_business</b> provider.
 More about [waba templates](#v2-waba_templates)
 
-<!--
 
 #### Response Parameters
 
@@ -369,9 +372,6 @@ Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
 message_ids  | true | Must be an array of integers | Message IDs to be deleted. The maximum array size is 100 elements.
 company_id | true | Must be an integer | ID of the company
-
--->
-
 
 #### Response Parameters
 
