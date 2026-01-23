@@ -342,7 +342,6 @@ substitutions | false | Must be an array of strings | WhatsappBusiness template 
 You should use waba_id if you want to write first with <b>whatsapp_business</b> provider.
 More about [waba templates](#v2-waba_templates)
 
-<!--
 
 #### Response Parameters
 
@@ -369,9 +368,6 @@ Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
 message_ids  | true | Must be an array of integers | Message IDs to be deleted. The maximum array size is 100 elements.
 company_id | true | Must be an integer | ID of the company
-
--->
-
 
 #### Response Parameters
 
