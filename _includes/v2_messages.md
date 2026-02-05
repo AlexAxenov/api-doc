@@ -168,7 +168,7 @@ company_id | true | Must be an integer | ID of the company
 
 [Message object](#v2-message-object)
 
-<!--
+
 ```shell
 curl -X POST 'https://api.pact.im/api/p2/conversations/CONVERSATION_ID/messages' \
   --header 'Content-Type: application/json' \
@@ -179,7 +179,7 @@ curl -X POST 'https://api.pact.im/api/p2/conversations/CONVERSATION_ID/messages'
     "attachment_ids": ["ID_attachment"]
     "replied_to_id": EXTERNAL_MESSAGE_ID_FROM_PROVIDER
   }'
-```-->
+```
 ```shell
 curl -X POST 'https://api.pact.im/api/p2/conversations/CONVERSATION_ID/messages' \
   --header 'Content-Type: application/json' \
@@ -251,8 +251,7 @@ company_id | true | Must be an integer | ID of the company
 text | false | Must be a string | Text of the message
 attachment_ids | false | Must be an array of integers | ID of the [attachments](#attachments). One message can contain only one array with one ID. To send multiple attachments, you must send multiple requests with different IDs.
 replied_to_id | false | Must be a string | [External ID](#v2-message-external-id) of the message to which this message is a reply
-
-<!-- send_to_crm | false | boolean | Sync initializing message to CRM integrations. Default: `true` -->
+send_to_crm | false | boolean | Sync initializing message to CRM integrations. Default: `true` 
 
 #### Response Parameters
 
@@ -336,8 +335,7 @@ text | false | Must be a string | Text of the message
 attachment_ids | false | Must be an array of integers | ID of the [attachments](#attachments). One message can contain only one array with one ID. To send multiple attachments, you must send multiple requests with different IDs.
 waba_id | false | Must be a string | WhatsappBusiness template ID
 substitutions | false | Must be an array of strings | WhatsappBusiness template substitutions (if template has them)
-
-<!-- send_to_crm | false | boolean | Sync initializing message to CRM integrations. Default: `true` -->
+ send_to_crm | false | boolean | Sync initializing message to CRM integrations. Default: `true` 
 
 You should use waba_id if you want to write first with <b>whatsapp_business</b> provider.
 More about [waba templates](#v2-waba_templates)
