@@ -65,6 +65,7 @@ Parameter | Required | Validations | Description
 --------- | -------- | ----------- | -----------
 private_api_token | true | Must be a string | YOUR_API_TOKEN
 company_id | true | Must be an integer | ID of the company
+search_string | false | Must be a string | Search query. Searches by sender phone, sender name or sender public external ID. Leading `+` and `@` characters are stripped automatically, so `+79991112233` and `79991112233`, or `@username` and `username` return the same result
 page | false | Must be an integer | Number of page. Returns first page if it is not provided
 per_page | false | Must be an integer | Amount of entries per page will be return ({{ CONVERSATIONS_PER_PAGE_DEFAULT }} by default)
 
