@@ -21,6 +21,7 @@ curl -X GET 'https://api.pact.im/api/p2/conversations/CONVERSATION_ID/messages' 
 > The above command returns JSON structured like this:
 
 ```json
+
 {
   "messages": [
     {
@@ -56,6 +57,7 @@ curl -X GET 'https://api.pact.im/api/p2/conversations/CONVERSATION_ID/messages' 
     "per_page": 150
   }
 }
+
 ```
 
 <p id="v2-get-conversation-messages"></p>
@@ -107,7 +109,7 @@ per_page | false | Must be an integer | Amount of entries per page will be retur
 * <b>details</b> (Object) - Data containing reason why message was not delivered (if it is)  
 * <b>attachments</b> (Array) – Array of message [attachment objects](#v2-attachment-object) (if it has)
 * <b>delivery</b> (Boolean) - Indicates whether this message was sent using the bulk mail feature or not.
-
+* <b>deleted</b> (Boolean) - Indicates whether this message has been deleted or not
 
 
 ```shell
@@ -349,11 +351,11 @@ More about [waba templates](#v2-waba_templates)
 <p id="v2-delete-message"></p>
 ### Delete Message
 
-{% assign DELETE _MESSAGES_PROVIDERS = "whatsapp,telegram_personal" | split: "," %}
+{% assign DELETE_MESSAGES_PROVIDERS = "whatsapp,telegram_personal,max" | split: "," %}
 
 Allows you to delete messages
 
-Only these providers available at this moment: <b>{{ DELETE _MESSAGES_PROVIDERS | join: ", " }}</b>
+Only these providers available at this moment: <b>{{ DELETE_MESSAGES_PROVIDERS | join: ", " }}</b>
 
 #### HTTP Request
 
