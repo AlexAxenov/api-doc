@@ -146,7 +146,9 @@ private_api_token | true | Must be a string | YOUR_API_TOKEN
 company_id | true | Must be an integer | ID of the company
 
 <p id="v2-update-conversation"></p>
+
 ### Update Conversation
+
 ```shell
 curl -X PUT 'https://api.pact.im/api/p2/conversations/3' \
 --header 'Content-Type: application/json' \
@@ -201,10 +203,8 @@ private_api_token | true | Must be a string | YOUR_API_TOKEN
 company_id | true | Must be an integer | ID of the company
 operational_state | false | Must be a string | Can be `open` or `archived`. 
 replied_state | false | Must be a string| Can be `replied` or `unreplied`. 
+assignee_id | false | Must be an integer/nullable| The ID of the responsible user. Pass null to remove the responsible user.
 
 #### Response Parameters
 
 [Conversation object](#v2-conversation-object)
-
-
-
